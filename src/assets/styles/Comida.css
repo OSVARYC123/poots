@@ -1,0 +1,33 @@
+.text-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px;
+}
+
+.text-content {
+  flex: 2;
+  padding-right: 20px;
+  font-family: Atlane;
+}
+
+.text-content .txt-acerca{
+  font-size: 48px;
+  font-family: Atlane;
+}
+
+.text-content .txt-descripcionComidaMexicana {
+  font-size: 24px;
+  color: #3e3e3e;
+}
+
+.image-content {
+  flex: 2;
+  text-align: right;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 135px;
+}

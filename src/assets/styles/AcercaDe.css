@@ -1,0 +1,140 @@
+.rectangulo{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #F3F4F4;
+}
+
+.zumzum{
+display: flex;
+justify-content: space-around;
+padding-block: 10%;
+}
+
+.texto{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.txt-acerca{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+
+  color: #000000;
+font-family: Atlane;
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.txt-descripcionacerca{
+text-align: justify;
+color: #4B4124;
+font-family: Jamie Woods;
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+
+}
+
+
+.conocermas1{
+border-radius: 11px;
+background: #FCC937;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.61);
+
+  display: flex;
+width: 223.816px;
+height: 56px;
+flex-direction: column;
+justify-content: center;
+flex-shrink: 0;
+
+color: #000;
+text-align: center;
+font-family: Atlane;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+}
+
+.FotoAcercaDe{
+  width: 624px;
+  height: 418px;
+  flex-shrink: 0;
+  margin-left: 60%;
+
+}
+
+.zum{
+  display: flex;
+justify-content: center;
+align-items: center;
+text-align: justify;
+
+
+filter: drop-shadow(7px 8px 4px rgba(0, 0, 0, 0.20));
+
+padding: 150px;
+}
+
+.car1{
+  width: 327.268px;
+height: 220px;
+text-align: center;
+
+border: 1px solid rgba(0, 0, 0, 0.13);
+background: #F3F4F4;
+box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.car2{
+  width: 327.268px;
+height: 220px;
+text-align: center;
+
+border: 1px solid rgba(0, 0, 0, 0.13);
+background: #F3F4F4;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.car3{
+  width: 327.268px;
+height: 220px;
+text-align: center;
+
+border: 1px solid rgba(0, 0, 0, 0.13);
+background: #F3F4F4;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card-title{
+  padding-bottom: 10%;
+  padding-left: 20px;
+text-align: justify;
+}
+
+.card-text{
+  padding-bottom: 10%;
+  padding-left: 20px;
+  text-align: justify;
+}
+
+.iperson{
+  width: 20%;
+  font-size: 30px;
+}
+
+.ifood{
+  width: 20%;
+  font-size: 30px;
+}
+
+.ipay{
+  width: 20%;
+  font-size: 30px;
+}

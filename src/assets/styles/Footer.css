@@ -1,0 +1,247 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  column-count: auto;
+  column-width: 8rem;
+  margin-left: 10%;
+}
+.fondo-footer {
+  width: 2000px;
+height: 450px;
+background-color: #4B4124;  
+}
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  margin-top: 44px;
+}
+
+.txt-formularios-nom {
+  display: flex;
+  width: 102px;
+  height: 37px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  color: #FFF;
+font-family: Jamie Woods;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.txt-name-secciones {
+  font-family: Atlane;
+  font-size: 24px;
+}
+
+.txt-numeros{
+  font-size: 28px;
+}
+
+.button-formulario {
+  width: 468.256px;
+  height: 50px;
+  border-radius: 10px;
+
+  color: #282724;
+  font-family: Atlane;
+  background: #a09c8e;
+
+  color: #FFF;
+text-align: center;
+font-family: Atlane;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.61);
+}
+
+.contacto {
+  margin-top: 54px;
+  width: 260px;
+  height: 168px;
+  flex-shrink: 0;
+  color: #ffffff;
+
+}
+
+.TC {
+  display: flex;
+  width: 224px;
+  height: 31px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  text-align: justify;
+font-family: Atlane;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding-bottom: 25%;
+}
+
+.num1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  text-align: justify;
+  font-family: Jamie Woods;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  padding-bottom: 15%;
+}
+
+.num2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  text-align: justify;
+  font-family: Jamie Woods;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 15%;
+}
+
+.correo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  text-align: justify;
+  font-family: Jamie Woods;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.direccion {
+  margin-top: 54px;
+  width: 261px;
+  height: 140px;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.dn {
+  display: flex;
+  width: 225px;
+  height: 30px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+font-family: Atlane;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding-bottom: 20%;
+}
+
+.dire {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  text-align: justify;
+  font-family: Jamie Woods;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+ .redes-sociales {
+  margin-top: 54px;
+  width: 387px;
+  height: 231px;
+  flex-shrink: 0;
+  color: #ffffff;
+} 
+
+.rs {
+  display: flex;
+  width: 347px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+font-family: Atlane;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding-bottom: 15%;
+}
+
+.rsi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  text-align: justify;
+  font-family: Jamie Woods;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 10%;
+}
+
+.rst {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  text-align: justify;
+  font-family: Jamie Woods;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 10%;
+}
+
+.rsf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  text-align: justify;
+  font-family: Jamie Woods;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.swal2-title{
+  font-family: Atlane;
+}
+

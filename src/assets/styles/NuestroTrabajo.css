@@ -1,0 +1,31 @@
+.text-image-container-nt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px;
+  background-color: #f3f4f4;
+}
+
+.image-content-nt {
+  flex: 2;
+  padding-right: 40px;
+}
+
+.text-content-nt {
+  flex: 2;
+  text-align: right;
+  font-family: Atlane;
+}
+
+.txt-nt {
+  font-size: 40px;
+  color: #000000;
+  font-family: Atlane;
+}
+
+.txt-descripcion {
+  font-size: 24px;
+  font-style: normal;
+  color: #292929;
+  font-family: Atlane;
+}
