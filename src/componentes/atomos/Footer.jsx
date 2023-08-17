@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useRef } from "react";
+import React, { useState } from "react";
 import "../../assets/styles/Footer.css";
 import IconoPoots from "../../assets/img/IconoPoots.png";
 import { GoLocation } from "react-icons/go";
@@ -14,42 +15,91 @@ import { PiTiktokLogoFill } from "react-icons/pi";
 import { BiLogoFacebookCircle } from "react-icons/bi";
 
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
 
 function Footer() {
-  const formDataF = useRef();
+
+
+  const [formData, setFormData] = useState({
+    name: "",
+    telefono: "",
+    correo: ""
+  });
+
+  const formDataF = React.useRef();
+  
   const handlerClick = (e) => {
     e.preventDefault();
     const formData = new FormData(formDataF.current);
-    let URI = "http://localhost:80/Users";
-    let options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        Nombre: formData.get("name"),
-        Telefono: formData.get("telefono"),
-        Correo: formData.get("correo"),
-      }),
-    };
-    fetch(URI, options).then((response) => response.json());
-    Swal.fire({
-      position: "top-center",
-      height: 600,
-      width: 614,
-      padding:100,
-      imageUrl:"https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png", 
-      imageWidth:"200",
-      imageHeight: "200",
-      color: "#4B4124",
-      title: "¡Registro exitoso!",
-      text: JSON.stringify("Bienvenido"),
-      confirmButtonText: "Aceptar",
-      confirmButtonColor:"#568943",
-      //showConfirmButton: false,
-      // timer: 15500,
-    });
+    const userEmail = formData.get("correo");
+
+    
+    fetch("http://localhost:3000/Users")
+      .then((response) => response.json())
+      .then((correosExistentes) => {
+        const listaCorreos = correosExistentes.map((usuario) => usuario.Correo);
+
+        if (listaCorreos.includes(userEmail)) {
+          Swal.fire({
+            icon: "error",
+            title: "Error al registrar usuario",
+            width:"960"
+          });
+        } else {
+          let URI = "http://localhost:3000/Users";
+          let options = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              Nombre: formData.get("name"),
+              Telefono: formData.get("telefono"),
+              Correo: userEmail,
+            }),
+          };
+          fetch(URI, options)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.message === "Usuario registrado exitosamente") {
+                setFormData({
+                  name: "",
+                  telefono: "",
+                  correo: ""
+                });
+                  Swal.fire({
+                    position: "top-center",
+                    height: 600,
+                    width: 614,
+                    padding:100,
+                    imageUrl:"https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png", 
+                    imageWidth:"200",
+                    imageHeight: "200",
+                    color: "#4B4124",
+                    title: "¡Registro exitoso!",
+                    text: JSON.stringify("Bienvenido"),
+                    confirmButtonText: "Aceptar",
+                    confirmButtonColor:"#568943"
+                  })
+                  
+              } else {
+                  Swal.fire({
+                      icon: "error",
+                      title: "Error al registrar usuario",
+                      text: data.error,
+                  });
+              }
+          })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -57,32 +107,58 @@ function Footer() {
       <div class="d-flex justify-content-around">
         <div className="formulario">
           <div className="p-2">
-            <Form ref={formDataF}>
-              <Form.Group className="mb-3" controlId="formGroupEmail">
-                <Form.Label className="txt-formularios-nom">Nombre:</Form.Label>
-                <Form.Control type="text" id="name" name="name" />
-              </Form.Group>
+          <Form ref={formDataF}>
+        <Form.Group className="mb-3" controlId="formGroupEmail">
+          <Form.Label className="txt-formularios-nom">Nombre:</Form.Label>
+          <Form.Control
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={(e) =>
+              setFormData({ ...formData, name: e.target.value })
+            }
+          />
+        </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formGroupPassword">
-                <Form.Label className="txt-formularios-nom">Teléfono:</Form.Label>
-                <Form.Control type="number" id="telefono" name="telefono" />
-              </Form.Group>
+        <Form.Group className="mb-3" controlId="formGroupPassword">
+          <Form.Label className="txt-formularios-nom">Teléfono:</Form.Label>
+          <Form.Control
+            type="number"
+            id="telefono"
+            name="telefono"
+            value={formData.telefono}
+            onChange={(e) =>
+              setFormData({ ...formData, telefono: e.target.value })
+            }
+          />
+        </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formGroupPassword">
-                <Form.Label className="txt-formularios-nom">
-                  Correo:
-                </Form.Label>
-                <Form.Control type="text" id="correo" name="correo" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formGroupPassword">
+        <Form.Group className="mb-3" controlId="formGroupPassword">
+          <Form.Label className="txt-formularios-nom">Correo:</Form.Label>
+          <Form.Control
+            type="text"
+            id="correo"
+            name="correo"
+            value={formData.correo}
+            onChange={(e) =>
+              setFormData({ ...formData, correo: e.target.value })
+            }
+          />
+        </Form.Group>
 
-                  <button variant="primary" size="lg" className="button-formulario"onClick={handlerClick}>
-                  <img src={IconoPoots} />
-                  enviar
-                </button>
-                
-              </Form.Group>
-            </Form>
+        <Form.Group className="mb-3" controlId="formGroupPassword">
+          <button
+            variant="primary"
+            size="lg"
+            className="button-formulario"
+            onClick={handlerClick}
+          >
+            <img src={IconoPoots} alt="Icono" />
+            enviar
+          </button>
+        </Form.Group>
+      </Form>
           </div>
         </div>
 
